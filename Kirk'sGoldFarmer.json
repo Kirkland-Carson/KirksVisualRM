@@ -1,0 +1,438 @@
+{
+  "Variables": [
+    {
+      "name": "Gold bar",
+      "value": "Gold bar",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "Smelt",
+      "value": "Smelt",
+      "type": "ACTION"
+    },
+    {
+      "name": "Furnace",
+      "value": "Furnace",
+      "type": "GO"
+    },
+    {
+      "name": "Gold Bracelet",
+      "value": "Gold bracelet",
+      "type": "SPRITE_ITEM"
+    },
+    {
+      "name": "Make",
+      "value": "Make",
+      "type": "ACTION"
+    },
+    {
+      "name": "Make All",
+      "value": "Make All",
+      "type": "ACTION"
+    },
+    {
+      "name": "Gold bracelet",
+      "value": "",
+      "type": "INTERFACE_OBJECT"
+    },
+    {
+      "name": "Arrow Key",
+      "value": "6",
+      "type": "STRING"
+    },
+    {
+      "name": "msgSpam",
+      "value": "So...",
+      "type": "STRING"
+    },
+    {
+      "name": "msgSpam2",
+      "value": "dude i am way to high to be making gold stuff and netflixing...",
+      "type": "STRING"
+    },
+    {
+      "name": "isTurning",
+      "value": "true",
+      "type": "BOOL"
+    }
+  ],
+  "NodeCollection": [
+    {
+      "name": "StartCondition",
+      "base": {
+        "id": "5dcd43c4-1bfb-4a5f-a7a4-1da00fce8c7d",
+        "position": {
+          "x": "1342.0",
+          "y": "-172.0"
+        },
+        "flowTasks": {
+          "success": "e016541a-1508-4fb5-906d-4dfa6ef027fc"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "GameMode": "OSRS",
+        "IntervalLow": 976.0480908172756,
+        "IntervalHigh": 1411.9964852645187
+      }
+    },
+    {
+      "name": "InventoryCondition",
+      "base": {
+        "id": "e016541a-1508-4fb5-906d-4dfa6ef027fc",
+        "position": {
+          "x": "1786.0",
+          "y": "124.0"
+        },
+        "flowTasks": {
+          "success": "94221bca-771d-4a50-bb91-c90b7791607a",
+          "failure": "fd25d443-85e3-4194-aaa4-02bd330158ba"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "type": "InventoryQuery"
+        }
+      },
+      "variables": {
+        "ItemValues": [
+          "Gold bar"
+        ],
+        "ItemRegex": false,
+        "Condition": "Contains none of:"
+      }
+    },
+    {
+      "name": "BankWithdrawAction",
+      "base": {
+        "id": "94221bca-771d-4a50-bb91-c90b7791607a",
+        "position": {
+          "x": "2256.0",
+          "y": "-86.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "type": "BankQuery"
+        }
+      },
+      "variables": {
+        "Values": [
+          "Gold preset"
+        ],
+        "ItemRegex": true,
+        "Condition": "VisualRm preset",
+        "ConditionRegex": false
+      }
+    },
+    {
+      "name": "PlayerCondition",
+      "base": {
+        "id": "fd25d443-85e3-4194-aaa4-02bd330158ba",
+        "position": {
+          "x": "2257.0",
+          "y": "210.0"
+        },
+        "flowTasks": {
+          "success": "75a50b4c-167e-4c1a-9f08-08075c629f8f",
+          "failure": "662e4034-ea3d-4126-9b2d-2e0bb74f1b40"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "within": "",
+          "MinLvl": "",
+          "MaxLvl": "",
+          "type": "NpcQuery"
+        }
+      },
+      "variables": {
+        "Values": [],
+        "ValueRegex": false,
+        "Condition": "Is moving:"
+      }
+    },
+    {
+      "name": "PlayerCondition",
+      "base": {
+        "id": "662e4034-ea3d-4126-9b2d-2e0bb74f1b40",
+        "position": {
+          "x": "2736.0",
+          "y": "295.0"
+        },
+        "flowTasks": {
+          "failure": "bb8034f0-624a-41c2-a923-b4bfbd926915"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "within": "",
+          "MinLvl": "",
+          "MaxLvl": "",
+          "type": "NpcQuery"
+        }
+      },
+      "variables": {
+        "Values": [],
+        "ValueRegex": false,
+        "Condition": "Is animating (2s delay):"
+      }
+    },
+    {
+      "name": "InteractionAction",
+      "base": {
+        "id": "830b2c86-66d4-4a6b-9f49-49aeb6da2b4c",
+        "position": {
+          "x": "3812.0",
+          "y": "491.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": false,
+          "bool1": false,
+          "bool2": false,
+          "bool3": false,
+          "list3": [
+            "Smelt"
+          ],
+          "TypeList": [],
+          "within": "",
+          "results": "",
+          "type": "GOQuery"
+        }
+      },
+      "variables": {
+        "Condition": "GameObject",
+        "ItemValues": [
+          "Furnace"
+        ],
+        "ItemRegex": false,
+        "ActionValues": [
+          "Smelt"
+        ],
+        "ActionRegex": false
+      }
+    },
+    {
+      "name": "InterfaceAction",
+      "base": {
+        "id": "979e9fd9-8858-44ee-9b71-9c42f2faf6d6",
+        "position": {
+          "x": "3818.0",
+          "y": "181.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Condition": "Action",
+        "Values": [
+          "Gold bracelet"
+        ],
+        "ActionValues": [
+          "Make"
+        ],
+        "ItemRegex": false,
+        "ActionRegex": true
+      }
+    },
+    {
+      "name": "InterfaceCondition",
+      "base": {
+        "id": "bb8034f0-624a-41c2-a923-b4bfbd926915",
+        "position": {
+          "x": "3292.0",
+          "y": "259.0"
+        },
+        "flowTasks": {
+          "success": "979e9fd9-8858-44ee-9b71-9c42f2faf6d6",
+          "failure": "830b2c86-66d4-4a6b-9f49-49aeb6da2b4c"
+        },
+        "delayMultiplier": 1.0,
+        "queryData": {
+          "bool0": true,
+          "bool1": false,
+          "bool2": false,
+          "TypeList": [],
+          "type": "ICQuery"
+        }
+      },
+      "variables": {
+        "TextValues": [],
+        "TextRegex": false,
+        "ActionValues": [
+          "Make"
+        ],
+        "ActionRegex": true,
+        "InterfaceObject": "Gold bracelet",
+        "Cache container": false
+      }
+    },
+    {
+      "name": "RandomModulator",
+      "base": {
+        "id": "75a50b4c-167e-4c1a-9f08-08075c629f8f",
+        "position": {
+          "x": "2742.0",
+          "y": "150.0"
+        },
+        "flowTasks": {
+          "success": "091215f3-f71e-473a-959f-8617d2c65686",
+          "failure": "bb8034f0-624a-41c2-a923-b4bfbd926915"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "IntervalLow": 5.529729268884146,
+        "IntervalHigh": 15.469348372415912
+      }
+    },
+    {
+      "name": "WorldHopAction",
+      "base": {
+        "id": "0e702fb1-dc83-4285-a42d-20bc3a3e8b20",
+        "position": {
+          "x": "4367.0",
+          "y": "-71.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "WhiteValue": [
+          "MembersOnly",
+          "Bounty"
+        ],
+        "BlackValue": [
+          "F2P Only",
+          "Tournament",
+          "HighRisk",
+          "PVP",
+          "Deadman mode",
+          "SkillTotal500"
+        ],
+        "Condition": "Random"
+      }
+    },
+    {
+      "name": "KeyboardAction",
+      "base": {
+        "id": "d35b30e4-9990-4fcf-8a6e-173bc94dbefc",
+        "position": {
+          "x": "3836.0",
+          "y": "-84.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Action": "Type \u0026 Enter",
+        "Character": "msgSpam",
+        "IntervalLow": 92.57260111314712,
+        "IntervalHigh": 200.03741132560032
+      }
+    },
+    {
+      "name": "RandomModulator",
+      "base": {
+        "id": "091215f3-f71e-473a-959f-8617d2c65686",
+        "position": {
+          "x": "3245.0",
+          "y": "-137.0"
+        },
+        "flowTasks": {
+          "success": "b2ef3980-6f12-4373-8826-48556a3ded75",
+          "failure": "d35b30e4-9990-4fcf-8a6e-173bc94dbefc"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "IntervalLow": 10.215053667304336,
+        "IntervalHigh": 20.412332018216453
+      }
+    },
+    {
+      "name": "KeyboardAction",
+      "base": {
+        "id": "5aa4d249-0e46-47f0-83b0-80aaa39d1c63",
+        "position": {
+          "x": "4364.0",
+          "y": "-432.0"
+        },
+        "flowTasks": {},
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "Action": "Type \u0026 Enter",
+        "Character": "msgSpam2",
+        "IntervalLow": 213.74597849823684,
+        "IntervalHigh": 334.4543049969044
+      }
+    },
+    {
+      "name": "RandomModulator",
+      "base": {
+        "id": "b2ef3980-6f12-4373-8826-48556a3ded75",
+        "position": {
+          "x": "3826.0",
+          "y": "-226.0"
+        },
+        "flowTasks": {
+          "success": "5aa4d249-0e46-47f0-83b0-80aaa39d1c63",
+          "failure": "0e702fb1-dc83-4285-a42d-20bc3a3e8b20"
+        },
+        "delayMultiplier": 1.0
+      },
+      "variables": {
+        "IntervalLow": 50.27103875273018,
+        "IntervalHigh": 50.27103875273018
+      }
+    }
+  ],
+  "BotCategory": "OTHER",
+  "inventoryData": {
+    "invPreset_Ranarr Preset": [
+      {
+        "name": "Bracelet mould",
+        "id": 11065,
+        "noted": false,
+        "quantity": 1,
+        "selected": false
+      },
+      {
+        "name": "Gold bar",
+        "id": 2357,
+        "noted": false,
+        "quantity": 27,
+        "selected": false
+      }
+    ],
+    "invPresets": [
+      "Ranarr Preset",
+      "Gold preset"
+    ],
+    "invPreset_Gold preset": [
+      {
+        "name": "Bracelet mould",
+        "id": 11065,
+        "noted": false,
+        "quantity": 1,
+        "selected": true
+      },
+      {
+        "name": "Gold bar",
+        "id": 2357,
+        "noted": false,
+        "quantity": 27,
+        "selected": true
+      }
+    ]
+  },
+  "internalData": {
+    "Mouse multiplier": 1.0,
+    "Mouse path": "MLP_PATH_GENERATOR",
+    "Disable advanced": false
+  }
+}

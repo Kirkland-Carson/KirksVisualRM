@@ -1,0 +1,25 @@
+[OSRS] Kirk's Gold Farmer
+
+Gold Jewelery Bot w/ Anti-Ban/
+
+GitHub Gist:
+https://gist.github.com/Kirkland-Carson/6cd4609c3788d934482f8c3f0ca247ce
+
+Requirements:
+--------------------
+(1)  Gold Bars in Bank
+(2)  Specific Mould in Bank
+(3)  Must be at bank, the Furnace, or inbetween.
+
+How to Change Gold jewelry 'Type':
+(1)  Pause bot when inv is filled with bars/jewelry
+(2)  Make another Variable: "Gold _____" and make it an "Interface Object"
+(3)  Now make another Variable: "Gold _____", with the Value "Gold _____". and make it a "Sprite Item"
+(4)  Follow the bottom Flow Modules to find the Gold ____ options to change out.
+(5)  You should change:
+[Interface Condition: Text, Interface Object]
+[Interface Interaction: Interface Object]
+
+thanks! If anyone like this, ill be working on a Herb Flipping Bot: buys/cleans/sells/repeat
+
+-Kirkland
